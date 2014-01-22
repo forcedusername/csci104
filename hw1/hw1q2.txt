@@ -1,0 +1,8 @@
+## HW 1 Problem2
+
+### 2.
+####a. Option 1 is supported. 
+####b.
+#####1. git add
+#####2. git log -p -3
+####c. Git will commit the files that you staged for commit. 
