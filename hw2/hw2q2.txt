@@ -1,0 +1,10 @@
+Homework 2 Problem 2
+a.) According to git bash, there is nothing to commit because the working directory is clean.
+b.) README.md has been modified and is in the changes not staged for commit section while fun_problem.txt is untracked.
+c.) Both files have been modified (and labeled as such) and are in the changes to be committed section.
+d.) Both files have been modified once more and are now in the changes not staged for commit section. 
+e.) README.md has been modified and is in the changes to be committed section while fun_problem.txt seems to have disappeared.
+f.) README.md has been modified and seems to be in two places (one is in the changes to be committed section while the
+other is in the changes not be staged for commit section. This is so because of the echo command which does not actually
+count as a real change in the file, resulting in the double file.
+g.) 

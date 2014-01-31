@@ -1,0 +1,8 @@
+Homework 2 Problem 1
+a.) Every action line must start with a tab character.
+b.) 
+c.) The .PHONY rule guards against possible duplicates of files in the same folder as your makefile by making sure makefile
+only pays attention to the ones associated with the makefile. Commands such as clean and all arent referring to any one
+file but if you had a file named clean or all and you used make, not having the phony rule would confuse make (courtesy of
+Stack Overflow).
+d.) Options 2 and 4 are the only acceptable names for makefile. 
