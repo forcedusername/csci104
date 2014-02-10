@@ -1,0 +1,18 @@
+Problem 1.
+	part b. I used the br (breakpoint) command to place breakpoints and figure out where the function was going. 
+	part c1. The factorials are all equal to zero because the loop in the factorial function starts from zero. 
+		Since you multiply the number by itself, you're multiplying by zero over and over again thus leading to zero. 
+	part c2. After breakpoints, I used the n command to go line by line and the print command to track the value of i 
+		and num in the factorial function. 
+		Seeing how num and i behaved showed me that multiplying by zero was a prime reason why the 
+		product was not correct. 
+	part d1. The bug I discovered was how the factorial was being calculated and returned. Using the num variable
+		to maintain the factorial product while also using the same variable to iterate through led to incorrect
+		results. The proper thing to do would be to make a copy of the factorial number and have that copy maintain
+		the factorial product and return that to the main function.
+	part d2. I used similar functions to part c. Printing out the variable after every iteration and seeing what was
+		returned to the main function was extremely beneficial to the debugging process and helped me pinpoint what
+		was wrong. In addition, after the print function, I used the frame n function which helped quite a bit by 
+		showing the progression of num and i as they went through the function. 
+	
+	I managed to finish and get the correct output after these few commands and edits. 

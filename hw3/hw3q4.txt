@@ -1,0 +1,28 @@
+Functions: insert
+	remove
+	set
+	size
+	get
+	print
+	
+		insert: The insert function is going to be big Theta of n, so linear time. The reason this is so is because
+			at the worst case, the insert function will have to traverse the entire list to find its corresponding
+			position and then will it only be able to add in the item in question. Since the list will have to be 
+			traversed in order to add an item, we know that the worst case will take at least the length of the
+			entire list and the worst case will take at most the entire list (provided insert works correctly). 
+		remove: The same logic as the insert function is true. At the worst case, you'll have to traverse 
+			the entire list to find the index you need to remove, so however long this takes will depend
+			wholly on the size of the list or input and will grow as the input grows or linearly. 
+		set: Setting has the same principle as getting. You still have to walk through the entire list and 
+			find the particular value you'd like to change. In the worst case, you'd have to walk through at least
+			the entire list and at most the entire list, making this big Theta of n. 
+		size: The size function has to walk through all the elements of the list to find out how many elements 
+			there are so this is going to be big Theta of n because at the worst of the worst case, you'll have to 
+			go through the entire list. In addition, you'll have to at least walk through the entire list to find
+			out the size. Since big O (upper bound on worst case) and big Omega (the lower bound on the worst case)
+			match, big Theta is the same as them when considering runtime.  
+		get: Getting a certain value means you have to go through the entire list and check if they are the necessary
+			value. This would, in the worst case, require you to look at at least every element and at most every
+			element. Thus, this is big Theta of n since the worst case lower and upper bound match. 
+		print: Printing the values is the same way the size works. In order to print out values, you will have to 
+			find them first and finding specific values means walking the length of the list (in this function). 

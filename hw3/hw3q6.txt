@@ -1,0 +1,26 @@
+Functions: size
+	add
+	remove
+	get
+	find
+		
+		size: This function is big Theta of n. In order to find out how many items there are in the Map,
+			the function has to go through every element and count so how long this takes depends on the size of 
+			the map. Since we are using List's size function here, it stands to reason that Map's size function 
+			will take the same amount of time as the List's size function. 
+		remove: The remove function is the same as the others in runtime. In order to remove a certain element from
+			the map, you would have to at the worst walk through every element of the map. This would obviously
+			depend on the size of the map and how many elements there are so this would again be big Theta of n 
+			since in the worst case you would have to walk through at least n elements and at most n elements.
+		add: The add function is going to be the same runtime as the list function since we're using the list function.
+			In any case, we have to walk through the entire list in the worst case to find the particular position to
+			insert the value, making the runtime big Theta of n since youd have to walk through at least n elements 
+			and at most n elements in the worst case. 
+		get: Since we are using the list's get function, the same runtime applies here. In the worst case, we 
+			traverse the entire list to get the object and how many items we go through and examine is based on how 
+			big the list is. We have to walk through at least n items in the worst case and at most n items in the	
+			worst case meaning we have a runtime of big Theta of n. 
+		find: At the worst case, the element we're trying to locate is the last element of the map. In this
+			situation, we'd have to walk through the entire list to find the key value pair and this means that
+			we have an algorithm that in its worst case is upper bounded by n, the size of the list and whose
+			worst case is also lower bounded by n.
