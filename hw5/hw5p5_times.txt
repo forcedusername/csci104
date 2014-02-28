@@ -1,0 +1,37 @@
+time for linked list front: 9813
+time for linked list back: 19483
+
+time for plus one array list front: 24157
+time for plus one array list back: 12375
+
+time for plus ten array list front: 12985
+time for plus ten array list back: 1250
+
+time for doubling array list front: 11750
+time for doubling array list back: 0
+
+reasoning: The linked list takes the time it does due to its Big O notation. it takes substantially less time to
+relocate the head pointer rather than walk down the entire list and update the tail pointer as you'd be doing
+here. 
+
+the plus one array takes such an exorbitant amount of time because, by the definition of big O, which is roughly
+the amount of operations that you do, big O of plus one is high because it must constantly resize after the
+initial capacity is reached. 
+
+the plus ten array takes a substantially less amount of time because it only has to do one tenth the amount of operations
+that plus one has to do since it updates ten at a time. however, this is not as efficient as the doubling list
+because for a large amount of input, adding ten each time is still at least 1000 operations.
+
+doubling takes the least amount of times because it has to resize least often, and as per big O, this is the fewest
+number of operations. depending on what you set capacity to, doubling can reach the 50,000 capacity in under 50 
+operations, while the others are talking about thousands of operations. although the actual operation takes
+more time since it is allocating more memory, the fact that it has to allocate more memory less frequently
+makes it the fastest.  
+
+as for why the front insert takes the longest (sometimes spectacularly so) this is because in order to insert at
+the 0th index, you have to walk down the entire list and shift all the values by one index. this is always going 
+to be big O (n) and will grow with the size of the list (part of the reason why the times are so varied). however,
+the same logic regarding the reasoning behind the times still holds as the values need to be copied over but the 
+fact of the matter remains that allocating a new array is still the chief operation. doubling array list's efficiency
+is what makes it fastest, but not by much when you compare the front insert of doubling and plus ten. however,
+no contest when considering back insert. 

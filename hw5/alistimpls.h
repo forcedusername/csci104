@@ -37,7 +37,7 @@ void DoublingArrayList<T>::resize ( ){
 	capacity=capacity*2;
 	cout<<"Doubling capacity is: "<<capacity<<endl;
 	
-	//delete [ ] array_copy;
+	delete [ ] array_copy;
 
 }
 
@@ -72,7 +72,7 @@ void PlusOneArrayList<T>::resize ( ){
 	capacity=capacity+1;
 	//cout<<"plus one capacity is: "<<capacity<<endl;
 	
-	//delete [ ] array_copy;
+	delete [ ] array_copy;
 }
 
 
@@ -104,9 +104,9 @@ void PlusTenArrayList<T>::resize ( ){
 		z++;
 	}
 	capacity=capacity+10;
-	cout<<"plus ten capacity is: "<<capacity<<endl;
+	//cout<<"plus ten capacity is: "<<capacity<<endl;
 	
-	//delete [ ] array_copy;
+	delete [ ] array_copy;
 }
 
 #endif

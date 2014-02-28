@@ -42,26 +42,31 @@ class arrayList : public IList <T>
 		//T& operator== (int position);
 
 	protected: 
-		virtual void resize () = 0;
+		void resize ();
 		T* array_locate;
 		unsigned int current_size;
 		unsigned int capacity;
 		//set capacity at beginning 
 	
 };
-/*
-template<class T>
-T& arrayList::operator= (int position){
+
+template <class T> 
+void DoublingArrayList<T>::resize ( ){
+  
+	T *array_copy=array_locate;
+  
+	array_locate=new T [capacity*2];
+	int z=0;
+	while (z<capacity){
+		array_locate [z]=array_copy [z];
+		z++;
+	}
+	capacity=capacity*2;
+	cout<<"Doubling capacity is: "<<capacity<<endl;
 	
+	delete [ ] array_copy;
 
 }
-
-template<class T>
-T& arrayList::operator== (int position){
-
-
-}
-*/
 
 template <class T>
 void arrayList<T>::push_back (const T&value){
@@ -87,17 +92,16 @@ void arrayList<T>::insert (int position, const T&value){
 		throw position;
 	}
 	
-	if (position==current_size){
+	if (position==current_size||position==0){
 		push_back (value);
 		return;
 	}
 	
-	current_size++;
 	if (current_size>=capacity){
 		resize();
 	}
 	
-	//current_size++;
+	current_size++;
 	int size_copy=current_size;
 	while (size_copy>position){
 		array_locate [size_copy]=array_locate [size_copy-1];
