@@ -43,32 +43,27 @@ int main (int argc, char *argv[] ){
 	}
 	cout<<endl;
 	*/
-	//double teatime = 0.000000000000;
-	double teatime;
-	double next;
+	double teatime = 0.000000000000;
+	//double teatime;
+	double next=0.000000000;
 	clock_t start,end;
 	start=clock();
     
+	for(int j = 0; j < 20; j++){
 	qrand (place, 0, place.size()-1);
-	
+	}
 	end= clock();
 	teatime= (double)start;
 	//double next=0.00000000000;
 	
 	next = (double) end;
 	
-	//double fin_time= next-teatime;
+	double fin_time= next-teatime;
+	fin_time=fin_time/20;
 	//teatime/=CLOCKS_PER_SEC;
 	cout<<"Next is: "<<next<<endl;
 	cout<<"teatime is: "<<teatime<<endl;
-	//cout<<"fin time is: "<<fin_time<<endl;
-	/*
-	cout<<"after sorting..."<<endl;
-	for (unsigned int i=0; i<place.size(); i++){
-		cout<<place [i]<<" ";
-	}
-	cout<<endl;
-	*/
+	cout<<"fin time is: "<<fin_time<<endl;
 	
 return 0;	
 }

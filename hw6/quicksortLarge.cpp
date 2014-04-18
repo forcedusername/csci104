@@ -11,7 +11,7 @@ int get_highest (vector<int> &list);
 int get_partition (vector<int> &list, int start, int end);
 void qlarge (vector <int> &list, int start, int end);
 
-int main ( ){
+int main (int argc, char* argv[] ){
 	vector<int> place;
 	srand (time (NULL));
 
@@ -35,25 +35,27 @@ int main ( ){
 		swap(place,index1,index2);
 	}
 	
-	cout<<endl;
-		double teatime;
-	double next;
+	//cout<<endl;
+	double teatime=0.0000000;
+	double next=0.000000;
 	clock_t start,end;
 	start=clock();
     
-	qlarge (place, 0, place.size()-1);
-	
+	for (int i=0; i<20; i++){
+		qlarge (place, 0, place.size()-1);
+	}
 	end= clock();
 	teatime= (double)start;
 	//double next=0.00000000000;
 	
 	next = (double) end;
 	
-	//double fin_time= next-teatime;
+	double fin_time= next-teatime;
+	fin_time=fin_time/20;
 	//teatime/=CLOCKS_PER_SEC;
 	cout<<"Next is: "<<next<<endl;
 	cout<<"teatime is: "<<teatime<<endl;
-	
+	cout<<"final time is: "<<fin_time<<endl;	
 	//qlarge (place, 0, place.size()-1);
 	//measuring time...
 	
