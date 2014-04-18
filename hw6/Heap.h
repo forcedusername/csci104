@@ -104,7 +104,15 @@ void MaxHeap<T, K>::remove () {
 	if (empty==true){
 		throw (out_of_range("Out of range"));
 	}
-	heap_impl.erase (heap_impl.begin());
+	//dont erase blindly and shrink everything, you dont want to change the index of everything else
+	//so when you delete the top element, you dont just promote what's at index of 1
+	//make the [0] equal to the back element of the heap
+	//and then delete the back element
+	//and then heapify the living shit out of it
+	heap_impl [0]=heap_impl.back();
+	//cout<<"Heap_impl at zero is: "<<heap_impl [0]<<endl;
+	heap_impl.pop_back();
+	//heap_impl.erase (heap_impl.begin());
 	heapify (0);	
 }
   
@@ -120,24 +128,56 @@ bool MaxHeap<T, K>::isEmpty () const{
 template <class T, class K>
 void MaxHeap<T, K>::heapify (int index){
 //what does this do
-//rearranges some shit
+
 	if (index>heap_impl.size()-1){
 		return;
 	}
-	
-	/*
+	int greatest;
 	if ((index*degree+1)>heap_impl.size()-1){
 		//cout<<"you're at a leaf."<<endl;
+		//cout<<"heap_impl at zero is: "<<heap_impl [0]<<endl;
+		
+		//this doesn't go into the for loop for the last function...
+		//return;
+		//you have the for loop so you go through all the leaves to compare with the zero index. 
+		
+		for (int jj=0; jj<heap_impl.size()-1;jj++){
+			//cout<<"entered for loop with : "<<heap_impl [0]<<endl;
+			if (heap_impl [0]<heap_impl [jj]){
+				//cout<<"Heap at 0: "<<heap_impl [0]<<endl;
+				//cout<<"Comparing with : "<<heap_impl [jj]<<endl;
+				swap (0, jj);
+				//cout<<"heap at zero after swap is: "<<heap_impl [0]<<endl;
+				jj=0;
+				//heapify (0);
+				//can you just swap and heapify on zero again
+			}	
+		}
+		
 		return;
+		/*
+		if (degree>heap_impl.size()){
+			greatest=index+1;
+		
+		//you have this check for what....
+		//you have this check because you dont want to get/risk a seg fault
+		//how do you know you've reached the last leaf? this thing below
+		//dont heapify a leaf...
+			if (greatest>heap_impl.size()-1){
+				return;
+			}
+		}
+		*/
 	//index*d + d--
-	}
-	*/
 	
-	int greatest=degree*index+1; //setting left child to greatest 
-	//int right;
+	}
+	else {
+		greatest=degree*index+1; //setting left child to greatest 
+		//int right;
+	}
 	if ((index*degree+degree<=heap_impl.size()-1)){
 		int right= greatest+1;
-		right=greatest+1;
+			right=greatest+1;
 		if (heap_impl [greatest]<heap_impl[right]){
 			greatest=right;
 		}
@@ -149,6 +189,8 @@ void MaxHeap<T, K>::heapify (int index){
 		
 		heapify (greatest);
 	}
+
+			
 }
 
 
