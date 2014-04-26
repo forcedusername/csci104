@@ -1,0 +1,26 @@
+Problem 5a). 
+	Exp
+	1. In order for the hash bucket to be empty, you would have to have no functions hash to that particular bucket.
+	2. Probability of picking a certain bucket is 1/number_buckets, so probability of not picking it is 1-(1/number buckets).
+		With k items to be hashed and n buckets, expected number of items that hash to any one location is n/k.
+	3. If you know that the probability of not picking one bucket is 1-(1/num_buckets) then calculating the expected value of empty locations
+		comes out to n(1-1/n)^k. 
+	
+	
+Problem 5b.)
+	 Probability that one value gets mapped to this particular hash bucket is 1/num_buckets, so the probability that k values get mapped to it is
+	(1/num_buckets)^k. According to the Union Bound theorem, P (not A) <= P (of the Union of all "bad" events B)<= the sum of P (bad events B).
+	P (not A) is, as we  described in the previous problem, for one item is 1-(1/num_buckets). For k items, this probability is (1-(1/num_buckets))^k. 
+	The probability that any bucket has more than k keys in it will be less than (1-(1/num_buckets))^k (the upper bound). 
+	The fullest a typical bucket will become is actually going to be log n/log log n where n is the size of the hash table buckets. This is so because
+	if we choose a sufficiently large enough k, we see that this is the upper bound. The bound on the probability is satisfied best by an exponential 
+	equation, so to solve this equation, this log growth would be the correct maximum number of elements in any given hash table bucket. 
+	
+Summary:
+	Hashing is clearly more efficient, and with a good enough hashing function, probability of collisions and dealing with overfilled buckets is minimal.
+	As we proved in 5a, the maximum size of a bucket chained is big O of log n (O (log n)). Seeing that finding a key is at worst this run time is much
+	better than having to walk through a data sample the size of something exorbitant like ten million. As n gets bigger and bigger, the advantage of 
+	hashing and the probability of collisions in a suitably large hash table diminish, making hashing a far more efficient technique than anything else
+	we've studied thus far. 
+	
+	
